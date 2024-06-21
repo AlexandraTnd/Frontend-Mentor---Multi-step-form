@@ -1,19 +1,21 @@
 let step = 1;
 let orderDetails = {
     personalInfo: {
-        'fullName': "",
-        'email': "",
-        'phone': ""
-    },
-    selectedPlanChoices: "monthly",
-    
+        fullName: "",
+        email: "",
+        phone: ""
+    },   
+    subscriptionPeriod: "",
+    planName: "",
+    price: 0
 };
+let selectedPlanChoices = "monthly";
 
 const monthlyPrices = {
     arcade: 9,
     advanced: 12,
     pro: 15
-};
+}
 
 const step1Element = document.getElementById('step1');
 const step2Element = document.getElementById('step2');
@@ -37,6 +39,9 @@ selectStep();
 nextStepButton.addEventListener('click', () => {
     if (step === 1) {
         performStep1();
+        selectStep();
+    } else if (step === 2) {
+        performStep2();
         selectStep();
     }
 })
