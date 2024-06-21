@@ -6,7 +6,13 @@ let orderDetails = {
         'phone': ""
     },
     selectedPlanChoices: "monthly",
-    prices: [9, 12, 15]
+    
+};
+
+const monthlyPrices = {
+    arcade: 9,
+    advanced: 12,
+    pro: 15
 };
 
 const step1Element = document.getElementById('step1');

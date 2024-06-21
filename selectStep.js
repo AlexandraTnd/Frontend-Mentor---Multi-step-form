@@ -10,7 +10,7 @@ function selectStep() {
         goBackButton.classList.add('hidden');
         document.getElementById('buttons-menu').classList.remove("justify-content-between");
         document.getElementById('buttons-menu').classList.add('justify-content-end');
-    } else if (step == 2) {
+    } else if (step === 2) {
         step1Element.classList.add('hidden');
         step2Element.classList.remove('hidden');
         step3Element.classList.add('hidden');
@@ -39,16 +39,16 @@ function selectStep() {
                 document.getElementById('monthly-plan').classList.remove('selected-plan-choices');
                 document.getElementById('yearly-plan').classList.add('selected-plan-choices');
                 document.getElementById('switch-month-year').classList.toggle('float-right');
-                for (let i = 0; i <= orderDetails.prices.length - 1; i++) {
-                    pricesElements[i].innerText = `$${orderDetails.prices[i] * 12}/y`;
+                for (let i = 0; i <= Object.keys(monthlyPrices).length - 1; i++) {
+                    pricesElements[i].innerText = `$${monthlyPrices[Object.keys(monthlyPrices)[i]] * 12}/y`;
                 }
                 orderDetails.selectedPlanChoices = 'yearly';
             } else if (orderDetails.selectedPlanChoices === "yearly") {
                 document.getElementById('monthly-plan').classList.add('selected-plan-choices');
                 document.getElementById('yearly-plan').classList.remove('selected-plan-choices');
                 document.getElementById('switch-month-year').classList.toggle('float-right');
-                for (let i = 0; i <= orderDetails.prices.length - 1; i++) {
-                    pricesElements[i].innerText = `$${orderDetails.prices[i]}/mo`;
+                for (let i = 0; i <= Object.keys(monthlyPrices)[i].length - 1; i++) {
+                    pricesElements[i].innerText = `$${monthlyPrices[Object.keys(monthlyPrices)[i]]}/mo`;
                 }
                 orderDetails.selectedPlanChoices = 'monthly';
             }
