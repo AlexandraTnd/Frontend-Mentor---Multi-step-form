@@ -61,15 +61,6 @@ function performStep1() {
         orderDetails.personalInfo.phone = phoneInput.value;
 
         step++;
-        step1Element.classList.add('hidden');
-        step2Element.classList.remove('hidden');
-        step3Element.classList.add('hidden');
-        step4Element.classList.add('hidden');
-        step5Element.classList.add('hidden');
-        step1BulletElement.classList.remove('selected-step-bullet');
-        step2BulletElement.classList.add('selected-step-bullet');
-        goBackButton.classList.remove('hidden');
-        document.getElementById('buttons-menu').classList.remove("justify-content-end");
-        document.getElementById('buttons-menu').classList.add('justify-content-between');
+        
     }
 }

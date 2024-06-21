@@ -18,6 +18,7 @@
     href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
+  <script src="./selectStep.js"></script>
   <script src="./performStep1.js"></script>
   <script src="./script.js" defer></script>
   <title>Frontend Mentor | Multi-step form</title>
@@ -119,23 +120,32 @@
           <!-- Step 2 start -->
           <div id="step2">
 
-            Select your plan
-            You have the option of monthly or yearly billing.
-
-            Arcade
-            $9/mo
-
-            Advanced
-            $12/mo
-
-            Pro
-            $15/mo
-
-            Monthly
-            Yearly
-
-            Go Back
-            Next Step
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+            <div class="row justify-content-evenly">
+              <div class="plan-card col-3">
+                <img src="./assets/images/icon-arcade.svg" alt="arcade icon">
+                <div class='plan-name'>Arcade</div>
+                <div class="plan-price">$9/mo</div>
+              </div>
+              <div class="plan-card col-3">
+                <img src="./assets/images/icon-advanced.svg" alt="advanced icon">
+                <div class='plan-name'>Advanced</div>
+                <div class="plan-price">$12/mo</div>
+              </div>
+              <div class="plan-card col-3">
+                <img src="./assets/images/icon-pro.svg" alt="pro icon">
+                <div class='plan-name'>Pro</div>
+                <div class="plan-price">$15/mo</div>
+              </div>
+            </div>
+            <div id="toggle-plan-container" class="d-flex justify-content-center my-3 align-items-center">
+              <div id="monthly-plan">Monthly</div>
+              <div id="toggle-month-year">
+                <div id="switch-month-year"> </div>
+              </div>
+              <div id="yearly-plan">Yearly</div>
+            </div>
           </div>
           <!-- Step 2 end -->
 
@@ -198,7 +208,7 @@
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="#">Alexandra Trandafir</a>.
     </div>
-
+    </h4>
   </div>
 </body>
 

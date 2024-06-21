@@ -54,6 +54,10 @@ label {
     color: hsl(213, 96%, 18%);
 }
 
+h1 {
+    margin-top: 20px;
+}
+
 label {
     font-weight: bold;
     margin-top: 10px;
@@ -113,3 +117,58 @@ span {
 .input-warning {
     border-color: rgb(177, 24, 24);
 }
+
+.plan-card {
+    border: 1px solid hsl(231, 11%, 63%);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.plan-name {
+    margin-top: 30px;
+    color: hsl(213, 96%, 18%);
+    margin-bottom: none;
+    font-weight: bolder;
+}
+
+.plan-price {
+    color: gray;
+    font-size: 12px;
+}
+
+#toggle-plan-container {
+    background-color: hsl(231, 100%, 99%);
+    padding: 10px;
+    border-radius: 50px;
+    color: hsl(231, 11%, 63%);
+    font-weight: bold;
+}
+
+#toggle-month-year {
+    background-color: hsl(213, 96%, 18%);
+    width: 40px;
+    padding: 5px;
+    height: 25px;
+    border-radius: 50px;
+    margin: 0 10px;
+    position: relative;
+}
+
+#switch-month-year {
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    position: absolute;
+    transition: all 2s ease;
+}
+
+
+.float-right {
+    transform: translateX(15px);
+}
+
+.selected-plan-choices {
+    color: hsl(213, 96%, 18%);
+}
+
