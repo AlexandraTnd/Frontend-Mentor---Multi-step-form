@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    background-color: hsl(217, 100%, 97%);
+    height: 100vh;
+    font-family: 'Ubuntu';
+}
+
+#data-box {
+    background-color: white;
+    border-radius: 10px;
+}
+
+#step-menu {
+    background-image: url('./assets/images/bg-sidebar-desktop.svg');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    height: 50vh;
+    color: white;
+}
+
+.step-name {
+    text-transform: uppercase;
+    color: hsl(231, 11%, 63%);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.step-details {
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.step-number {
+    border: 1px solid hsl(206, 94%, 87%);
+    border-radius: 50%;
+    font-size: 16px;
+}
+
+.selected-step-bullet {
+    color: black;
+    background-color: hsl(206, 94%, 87%);
+    font-weight: bold;
+}
+
+h1,
+label {
+    color: hsl(213, 96%, 18%);
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input {
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid gray;
+}
+
+#step1 {
+    position: relative;
+}
+
+button {
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 15px;
+    margin-top: 20px;
+    bottom: 0;
+    right: 10px;
+    position: absolute;
+}
+
+p {
+    color: gray;
+}
+
+input:focus {
+    font-weight: bold;
+    border-color: hsl(243, 100%, 62%);
+    outline: hsl(243, 100%, 62%);
+}
+
+span {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.input-warning {
+    border-color: rgb(177, 24, 24);
+}
