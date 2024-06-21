@@ -70,20 +70,29 @@ input {
     border: 1px solid gray;
 }
 
-#step1 {
+#right-side-content {
     position: relative;
 }
 
-button {
+#next-step-button {
     background-color: hsl(213, 96%, 18%);
     color: white;
     border: none;
     border-radius: 8px;
     padding: 5px 15px;
-    margin-top: 20px;
-    bottom: 0;
-    right: 10px;
+}
+
+#go-back-button {
+    background: none;
+    border: none;
+    color: hsl(213, 96%, 18%);
+    font-weight: bold;
+}
+
+#buttons-menu {
     position: absolute;
+    bottom: 0;
+    width: calc(100% - 24px);
 }
 
 p {

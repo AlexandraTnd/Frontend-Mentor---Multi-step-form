@@ -1,4 +1,4 @@
-let step = 0;
+let step = 1;
 let orderDetails = {};
 
 const step1Element = document.getElementById('step1');
@@ -8,17 +8,24 @@ const step4Element = document.getElementById('step4');
 const step5Element = document.getElementById('step5');
 
 const step1BulletElement = document.getElementById('step1-bullet');
+const step2BulletElement = document.getElementById('step2-bullet');
+const step3BulletElement = document.getElementById('step3-bullet');
+const step4BulletElement = document.getElementById('step4-bullet');
 
 const nextStepButton = document.getElementById('next-step-button');
+const goBackButton = document.getElementById('go-back-button');
 
-document.getElementById('step1').style.height = document.getElementById('step-menu').offsetHeight + "px";
+document.getElementById('right-side-content').style.height = document.getElementById('step-menu').offsetHeight + "px";
 
-if (step === 0) {
+if (step === 1) {
     step2Element.classList.add('hidden');
     step3Element.classList.add('hidden');
     step4Element.classList.add('hidden');
     step5Element.classList.add('hidden');
     step1BulletElement.classList.add('selected-step-bullet');
+    goBackButton.classList.add('hidden');
+    document.getElementById('buttons-menu').classList.remove("justify-content-between");
+    document.getElementById('buttons-menu').classList.add('justify-content-end');
 }
 
 function performStep1(e) {
@@ -86,13 +93,23 @@ function performStep1(e) {
         }
         orderDetails = { personalInfo };
         step++;
+        step1Element.classList.add('hidden');
+        step2Element.classList.remove('hidden');
+        step3Element.classList.add('hidden');
+        step4Element.classList.add('hidden');
+        step5Element.classList.add('hidden');
+        step1BulletElement.classList.remove('selected-step-bullet');
+        step2BulletElement.classList.add('selected-step-bullet');
+        goBackButton.classList.remove('hidden');
+        document.getElementById('buttons-menu').classList.remove("justify-content-end");
+        document.getElementById('buttons-menu').classList.add('justify-content-between');
+
         console.log(orderDetails);
     }
 }
 
 nextStepButton.addEventListener('click', (e) => {
-    if (step === 0) {
+    if (step === 1) {
         performStep1(e);
     }
-
 })
