@@ -5,7 +5,8 @@ let orderDetails = {
         'email': "",
         'phone': ""
     },
-    selectedPlanChoices: "monthly"
+    selectedPlanChoices: "monthly",
+    prices: [9, 12, 15]
 };
 
 const step1Element = document.getElementById('step1');

@@ -31,17 +31,25 @@ function selectStep() {
         }
 
         const togglePlanChoices = document.getElementById("toggle-month-year");
+        const pricesElements = document.querySelectorAll('.plan-price');
+
 
         togglePlanChoices.addEventListener('click', () => {
             if (orderDetails.selectedPlanChoices === "monthly") {
                 document.getElementById('monthly-plan').classList.remove('selected-plan-choices');
                 document.getElementById('yearly-plan').classList.add('selected-plan-choices');
                 document.getElementById('switch-month-year').classList.toggle('float-right');
+                for (let i = 0; i <= orderDetails.prices.length - 1; i++) {
+                    pricesElements[i].innerText = `$${orderDetails.prices[i] * 12}/y`;
+                }
                 orderDetails.selectedPlanChoices = 'yearly';
             } else if (orderDetails.selectedPlanChoices === "yearly") {
                 document.getElementById('monthly-plan').classList.add('selected-plan-choices');
                 document.getElementById('yearly-plan').classList.remove('selected-plan-choices');
                 document.getElementById('switch-month-year').classList.toggle('float-right');
+                for (let i = 0; i <= orderDetails.prices.length - 1; i++) {
+                    pricesElements[i].innerText = `$${orderDetails.prices[i]}/mo`;
+                }
                 orderDetails.selectedPlanChoices = 'monthly';
             }
         })
