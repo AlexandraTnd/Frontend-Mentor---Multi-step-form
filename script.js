@@ -23,19 +23,29 @@ const goBackButton = document.getElementById('go-back-button');
 
 document.getElementById('right-side-content').style.height = document.getElementById('step-menu').offsetHeight + "px";
 
-if (step === 1) {
-    step2Element.classList.add('hidden');
-    step3Element.classList.add('hidden');
-    step4Element.classList.add('hidden');
-    step5Element.classList.add('hidden');
-    step1BulletElement.classList.add('selected-step-bullet');
-    goBackButton.classList.add('hidden');
-    document.getElementById('buttons-menu').classList.remove("justify-content-between");
-    document.getElementById('buttons-menu').classList.add('justify-content-end');
-}
-
-nextStepButton.addEventListener('click', (e) => {
+function selectStep() {
     if (step === 1) {
-        performStep1(e);
+        step1Element.classList.remove('hidden');
+        step1BulletElement.classList.add('selected-step-bullet');
+        step2Element.classList.add('hidden');
+        step2BulletElement.classList.remove('selected-step-bullet');
+        step3Element.classList.add('hidden');
+        step4Element.classList.add('hidden');
+        step5Element.classList.add('hidden');
+        goBackButton.classList.add('hidden');
+        document.getElementById('buttons-menu').classList.remove("justify-content-between");
+        document.getElementById('buttons-menu').classList.add('justify-content-end');
     }
+}
+selectStep();
+
+nextStepButton.addEventListener('click', () => {
+    if (step === 1) {
+        performStep1();
+    }
+})
+
+goBackButton.addEventListener('click', () => {
+    step--;
+    selectStep();
 })

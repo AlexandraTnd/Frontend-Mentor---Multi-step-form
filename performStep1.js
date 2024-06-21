@@ -1,5 +1,4 @@
-function performStep1(e) {
-    e.preventDefault();
+function performStep1() {
     let hasName = false;
     let hasEmail = false;
     let hasPhone = false;
@@ -72,7 +71,5 @@ function performStep1(e) {
         goBackButton.classList.remove('hidden');
         document.getElementById('buttons-menu').classList.remove("justify-content-end");
         document.getElementById('buttons-menu').classList.add('justify-content-between');
-
-        console.log(orderDetails);
     }
 }
