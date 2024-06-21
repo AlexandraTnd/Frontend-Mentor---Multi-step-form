@@ -59,8 +59,7 @@ function performStep1() {
         orderDetails.personalInfo.fullName = nameInput.value;
         orderDetails.personalInfo.email = emailInput.value;
         orderDetails.personalInfo.phone = phoneInput.value;
-
         step++;
-        
+
     }
 }
