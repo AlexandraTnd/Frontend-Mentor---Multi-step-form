@@ -22,6 +22,7 @@ function selectStep2() {
     step5Element.classList.add('hidden');
     step1BulletElement.classList.remove('selected-step-bullet');
     step2BulletElement.classList.add('selected-step-bullet');
+    step3BulletElement.classList.remove('selected-step-bullet');
     goBackButton.classList.remove('hidden');
     document.getElementById('buttons-menu').classList.remove("justify-content-end");
     document.getElementById('buttons-menu').classList.add('justify-content-between');
