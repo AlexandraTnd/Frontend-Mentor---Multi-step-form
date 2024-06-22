@@ -1,5 +1,6 @@
 let planEventListenersAdded = false;
 let toggleButtonEventListener = false;
+let addOnsEventListenersAdded = false;
 
 function selectStep1() {
     step1Element.classList.remove('hidden');
@@ -46,7 +47,7 @@ function selectStep2() {
 
                 if (e.target.id === "") {
                     cardID = e.target.parentNode.id;
-                }else {
+                } else {
                     cardID = e.target.id;
                 }
 
@@ -93,7 +94,7 @@ function selectStep2() {
         })
         toggleButtonEventListener = true;
     }
-    
+
 }
 
 function selectStep3() {
@@ -104,6 +105,23 @@ function selectStep3() {
     step5Element.classList.add('hidden');
     step2BulletElement.classList.remove('selected-step-bullet');
     step3BulletElement.classList.add('selected-step-bullet');
+
+    const addOnsElements = document.querySelectorAll('.addon-option');
+
+    for (let addOn of addOnsElements) {
+        addOn.addEventListener('click', () => {
+            addOn.classList.toggle("selected-plan");
+            console.log(addOn.children[0].children[0])
+            addOn.children[0].children[0].checked = !addOn.children[0].children[0].checked;
+
+
+
+            let addonKey = addOn.id.split("-").map((x,i) => i === 1 ? x[i] = x[i].charAt(0).toUpperCase() + x[i].slice(1) : x[i]).join("");
+            console.log(addOn.id);
+            orderDetails.addOns[addonKey] = !orderDetails.addOns[addonKey];
+            console.log(orderDetails.addOns[addonKey]);
+        })
+    }
 }
 
 function selectStep() {

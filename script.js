@@ -7,7 +7,12 @@ let orderDetails = {
     },   
     subscriptionPeriod: "",
     planName: "",
-    price: 0
+    price: 0,
+    addOns: {
+        onlineService: false,
+        largerStorage: false,
+        customizableProfile: false
+    }
 };
 let selectedPlanChoices = "monthly";
 
@@ -42,6 +47,9 @@ nextStepButton.addEventListener('click', () => {
         selectStep();
     } else if (step === 2) {
         performStep2();
+        selectStep();
+    } else if (step === 3) {
+        performStep3();
         selectStep();
     }
 })
