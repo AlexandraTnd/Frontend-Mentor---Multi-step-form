@@ -1,6 +1,7 @@
 let planEventListenersAdded = false;
 let toggleButtonEventListener = false;
 let addOnsEventListenersAdded = false;
+let changePlanEventListenerAdded = false;
 
 function selectStep1() {
     step1Element.classList.remove('hidden');
@@ -24,6 +25,7 @@ function selectStep2() {
     step1BulletElement.classList.remove('selected-step-bullet');
     step2BulletElement.classList.add('selected-step-bullet');
     step3BulletElement.classList.remove('selected-step-bullet');
+    step4BulletElement.classList.remove('selected-step-bullet');
     goBackButton.classList.remove('hidden');
     document.getElementById('buttons-menu').classList.remove("justify-content-end");
     document.getElementById('buttons-menu').classList.add('justify-content-between');
@@ -63,11 +65,8 @@ function selectStep2() {
                 selectCard();
                 orderDetails.subscriptionPeriod = selectedPlanChoices;
                 orderDetails.planName = cardID;
-                if (selectedPlanChoices === "monthly") {
-                    orderDetails.price = monthlyPrices[cardID];
-                } else if (selectedPlanChoices === "yearly") {
-                    orderDetails.price = monthlyPrices[cardID] * 12;
-                }
+                orderDetails.price = monthlyPrices[cardID];
+
             })
             planEventListenersAdded = true;
         }
@@ -81,7 +80,8 @@ function selectStep2() {
                 for (let i = 0; i <= Object.keys(monthlyPrices).length - 1; i++) {
                     pricesElements[i].innerText = `$${monthlyPrices[Object.keys(monthlyPrices)[i]] * 12}/y`;
                 }
-                selectedPlanChoices = 'yearly';
+                selectedPlanChoices = "yearly";
+                orderDetails.subscriptionPeriod = 'yearly';
             } else if (selectedPlanChoices === "yearly") {
                 document.getElementById('monthly-plan').classList.add('selected-plan-choices');
                 document.getElementById('yearly-plan').classList.remove('selected-plan-choices');
@@ -90,6 +90,7 @@ function selectStep2() {
                     pricesElements[i].innerText = `$${monthlyPrices[Object.keys(monthlyPrices)[i]]}/mo`;
                 }
                 selectedPlanChoices = 'monthly';
+                orderDetails.subscriptionPeriod = 'monthly';
             }
         })
         toggleButtonEventListener = true;
@@ -105,23 +106,80 @@ function selectStep3() {
     step5Element.classList.add('hidden');
     step2BulletElement.classList.remove('selected-step-bullet');
     step3BulletElement.classList.add('selected-step-bullet');
+    step4BulletElement.classList.remove('selected-step-bullet');
 
     const addOnsElements = document.querySelectorAll('.addon-option');
 
-    for (let addOn of addOnsElements) {
-        addOn.addEventListener('click', () => {
-            addOn.classList.toggle("selected-plan");
-            console.log(addOn.children[0].children[0])
-            addOn.children[0].children[0].checked = !addOn.children[0].children[0].checked;
+    if (!addOnsEventListenersAdded) {
+        for (let addOn of addOnsElements) {
+            addOn.addEventListener('click', () => {
+                addOn.classList.toggle("selected-plan");
+                addOn.children[0].children[0].checked = !addOn.children[0].children[0].checked;
+                let addonKey = addOn.id.split("-").map((x, i) => i === 1 ? x = x.charAt(0).toUpperCase() + x.slice(1) : x).join("");
+                orderDetails.addOns[addonKey] = !orderDetails.addOns[addonKey];
+            })
+        }
+        addOnsEventListenersAdded = true;
+    }
 
+}
 
+function selectStep4() {
+    step1Element.classList.add('hidden');
+    step2Element.classList.add('hidden');
+    step3Element.classList.add('hidden');
+    step4Element.classList.remove('hidden');
+    step5Element.classList.add('hidden');
+    step3BulletElement.classList.remove('selected-step-bullet');
+    step4BulletElement.classList.add('selected-step-bullet');
 
-            let addonKey = addOn.id.split("-").map((x,i) => i === 1 ? x[i] = x[i].charAt(0).toUpperCase() + x[i].slice(1) : x[i]).join("");
-            console.log(addOn.id);
-            orderDetails.addOns[addonKey] = !orderDetails.addOns[addonKey];
-            console.log(orderDetails.addOns[addonKey]);
+    let planPrice = orderDetails.subscriptionPeriod === "monthly" ? orderDetails.price : orderDetails.price * 12;
+
+    document.getElementById('plan-name').innerHTML = `${orderDetails.planName[0].toUpperCase() + orderDetails.planName.slice(1)} (${orderDetails.subscriptionPeriod[0].toUpperCase() + orderDetails.subscriptionPeriod.slice(1)})`;
+    document.getElementById('plan-total-price').innerHTML = `$${planPrice} ${orderDetails.subscriptionPeriod === "monthly" ? "/mo" : "/y"}`
+
+    if (!changePlanEventListenerAdded) {
+        document.getElementById("change-plan").addEventListener('click', () => {
+            step = 2;
+            changePlanEventListenerAdded = true;
+            selectStep();
         })
     }
+
+    let totalPrice = planPrice;
+
+    if (orderDetails.addOns.onlineService || orderDetails.addOns.largerStorage || orderDetails.addOns.customizableProfile) {
+        document.getElementById('hr').classList.remove('hidden');
+        document.getElementById("summary-addons").innerHTML = "";
+        for (item in orderDetails.addOns) {
+            if (orderDetails.addOns[item]) {
+                let itemName = item.split(/(?=[A-Z])/).map((x,i) => i === 0 ? x[0].toUpperCase() + x.slice(1) : x[0].toLowerCase() + x.slice(1)).join(" ");
+                let itemPrice = orderDetails.subscriptionPeriod === "monthly" ? addonPrices[item] : addonPrices[item] * 12;
+                totalPrice += itemPrice;
+
+                document.getElementById("summary-addons").innerHTML += 
+                    `<div class="row mx-auto align-items-center p-1">
+                        <div class="col-9">
+                            <div id="selected-addon-name">${itemName}</div>
+                        </div>
+                        <div class="col-3" id="selected-addon-price">$${itemPrice} ${orderDetails.subscriptionPeriod === "monthly" ? `/mo` : `/y`}</div>
+                    </div>`;
+                    
+            }
+        }
+    }
+
+    document.getElementById('total').innerHTML = `Total (per ${orderDetails.subscriptionPeriod === 'monthly' ? "month" : "year"})`;
+    document.getElementById('total-price').innerHTML = `$${totalPrice} ${orderDetails.subscriptionPeriod === "monthly" ? `/mo` : `/y`}`;
+}
+
+function selectStep5() {
+    step4Element.classList.add('hidden');
+    step5Element.classList.remove('hidden');
+    step4BulletElement.classList.add('selected-step-bullet');
+
+    document.getElementById('buttons-menu').classList.add('hidden');
+    
 }
 
 function selectStep() {
@@ -131,5 +189,9 @@ function selectStep() {
         selectStep2();
     } else if (step === 3) {
         selectStep3();
+    } else if (step === 4) {
+        selectStep4();
+    } else if (step === 5) {
+        selectStep5();
     }
 }

@@ -21,6 +21,8 @@
   <script src="./selectStep.js"></script>
   <script src="./performStep1.js"></script>
   <script src="./performStep2.js"></script>
+  <script src="./performStep3.js"></script>
+  <script src="./performStep4.js"></script>
   <script src="./script.js" defer></script>
   <title>Frontend Mentor | Multi-step form</title>
 
@@ -159,7 +161,7 @@
             <h1>Pick add-ons</h1>
             <p>Add-ons help enhance your gaming experience.</p>
 
-            <div id="online-services" class="addon-option row align-items-center p-2">
+            <div id="online-service" class="addon-option row align-items-center p-2">
               <div class="col-1 justify-content-center">
                 <input type="checkbox">
               </div>
@@ -181,7 +183,7 @@
               <div class="addon-price col-2 justify-content-center">+$2/mo</div>
             </div>
 
-            <div id="costomizable-profile" class="addon-option row align-items-center p-2">
+            <div id="customizable-profile" class="addon-option row align-items-center p-2">
               <div class="col-1 justify-content-center">
                 <input type="checkbox">
               </div>
@@ -191,33 +193,55 @@
               </div>
               <div class="addon-price col-2 justify-content-center">+$2/mo</div>
             </div>
-            
+
           </div>
           <!-- Step 3 end -->
 
           <!-- Step 4 start -->
           <div id="step4">
 
-            Finishing up
-            Double-check everything looks OK before confirming.
+            <h1>Finishing up</h1>
+            <p>Double-check everything looks OK before confirming.</p>
 
             <!-- Dynamically add subscription and add-on selections here -->
+            <div id="summary-info">
+              <div id="summary-plan" class="row mx-auto align-items-center py-2">
+                <div class="row mx-auto align-items-center p-1">
+                  <div class="col-9">
+                    <div id="plan-name" class="addon-name"></div>
+                    <div id="change-plan">Change</div>
+                  </div>
+                  <div class="col-3" id="plan-total-price"></div>
+                </div>
+              </div>
 
-            Total (per month/year)
+              <hr id="hr" class="hidden mx-auto my-0">
 
-            Go Back
-            Confirm
+              <div id="summary-addons" class="row mx-auto align-items-center py-2"></div>
+            </div>
+            <div id="summary-total">
+              <div id="total-info" class="row mx-auto align-items-center py-2">
+                <div class="row mx-auto align-items-center p-1">
+                  <div class="col-9">
+                    <div id="total"></div>
+                  </div>
+                  <div class="col-3" id="total-price"></div>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- Step 4 end -->
 
           <!-- Step 5 start -->
-          <div id="step5">
+          <div id="step5" class="h-100">
+            <div id="step5-content" class="h-100 d-flex flex-column align-items-center justify-content-center">
+              <img id="thank-you-image" src="./assets/images/icon-thank-you.svg" alt="thank you icon">
+              <h1 class="text-center">Thank you!</h1>
 
-            Thank you!
-
-            Thanks for confirming your subscription! We hope you have fun
-            using our platform. If you ever need support, please feel free
-            to email us at support@loremgaming.com.
+              <p class="text-center">Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@loremgaming.com.</p>
+            </div>
           </div>
           <!-- Step 5 end -->
           <div id="buttons-menu" class="d-flex">

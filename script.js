@@ -4,7 +4,7 @@ let orderDetails = {
         fullName: "",
         email: "",
         phone: ""
-    },   
+    },
     subscriptionPeriod: "",
     planName: "",
     price: 0,
@@ -20,6 +20,12 @@ const monthlyPrices = {
     arcade: 9,
     advanced: 12,
     pro: 15
+}
+
+const addonPrices = {
+    onlineService: 1,
+    largerStorage: 1,
+    customizableProfile: 2
 }
 
 const step1Element = document.getElementById('step1');
@@ -50,6 +56,9 @@ nextStepButton.addEventListener('click', () => {
         selectStep();
     } else if (step === 3) {
         performStep3();
+        selectStep();
+    } else if (step === 4) {
+        performStep4();
         selectStep();
     }
 })

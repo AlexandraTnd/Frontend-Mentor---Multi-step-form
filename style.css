@@ -3,7 +3,7 @@
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 body {
@@ -205,3 +205,58 @@ input[type="checkbox"] {
     accent-color: hsl(243, 100%, 62%);
     transform: scale(2);
 }
+
+#change-plan {
+    color: hsl(231, 11%, 63%);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+#summary-info {
+    width: 90%;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: hsl(230, 17%, 93%);
+    border-radius: 10px;
+}
+
+#plan-total-price {
+    color: hsl(213, 96%, 18%);
+}
+
+hr {
+    width: 90%;
+}
+
+#selected-addon-name {
+    color: hsl(231, 11%, 63%);
+    font-weight: normal;
+}
+
+#selected-addon-price {
+    color: hsl(213, 96%, 18%);
+    font-weight: normal;
+}
+
+#summary-plan, #summary-addons, #summary-total, #total-info {
+    width: 90%;
+}
+
+#total-price {
+    color: hsl(243, 100%, 62%);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#total {
+    color: hsl(231, 11%, 63%);
+    font-weight: normal;
+    font-size: 12px;
+}
+
+#thank-you-image {
+    width: 100px;
+    height: 100px;
+}
+
