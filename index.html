@@ -40,207 +40,223 @@
 </head>
 
 <body class="d-flex align-items-center">
-  <div class="container">
+  <div class="container-fluid">
     <!-- Sidebar start -->
-    <div class="col-9 mx-auto px-4 py-3" id="data-box">
+    <div class="col-md-9 mx-auto px-4 py-3" id="data-box">
       <div class="row justify-content-center align-items-center">
-        <div class="col-4" id="step-menu">
-          <div class="row align-items-center justify-content-center my-3">
-            <div id="step1-bullet" class="col-1 step-number d-flex justify-content-center align-items-center">1</div>
-            <div class="col-8">
-              <div class="step-name">Step 1</div>
-              <div class="step-details">Your info</div>
+        <div class="col-12 col-md-4 " id="step-menu">
+          <div id="step-container" class="row justify-content-center my-5">
+            <div class="col-1 col-md-12">
+              <div class="row align-items-center justify-content-center my-3">
+                <div id="step1-bullet" class="col-1 step-number d-flex justify-content-center align-items-center">1
+                </div>
+                <div class="col-8 menu-step1">
+                  <div class="step-name">Step 1</div>
+                  <div class="step-details">Your info</div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="row align-items-center justify-content-center my-3">
-            <div id="step2-bullet" class="col-1 step-number d-flex justify-content-center align-items-center">2</div>
-            <div class="col-8">
-              <div class="step-name">Step 2</div>
-              <div class="step-details">Select plan</div>
+            <div class="col-1 col-md-12">
+              <div class="row align-items-center justify-content-center my-3">
+                <div id="step2-bullet" class="col-1 step-number d-flex justify-content-center align-items-center">2
+                </div>
+                <div class="col-8 menu-step2">
+                  <div class="step-name">Step 2</div>
+                  <div class="step-details">Select plan</div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="row align-items-center justify-content-center my-3">
-            <div id="step3-bullet" class="col-1 step-number d-flex justify-content-center align-items-center">3</div>
-            <div class="col-8">
-              <div class="step-name">Step 3</div>
-              <div class="step-details">Add-ons</div>
+            <div class="col-1 col-md-12">
+              <div class="row align-items-center justify-content-center my-3">
+                <div id="step3-bullet" class="col-1 step-number d-flex justify-content-center align-items-center">3
+                </div>
+                <div class="col-8 menu-step3">
+                  <div class="step-name">Step 3</div>
+                  <div class="step-details">Add-ons</div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="row align-items-center justify-content-center my-3">
-            <div id="step4-bullet" class="col-1 step-number d-flex justify-content-center align-items-center">4</div>
-            <div class="col-8">
-              <div class="step-name">Step 4</div>
-              <div class="step-details">Summary</div>
+            <div class="col-1 col-md-12">
+              <div class="row align-items-center justify-content-center my-3">
+                <div id="step4-bullet" class="col-1 step-number d-flex justify-content-center align-items-center">4
+                </div>
+                <div class="col-8 menu-step4">
+                  <div class="step-name">Step 4</div>
+                  <div class="step-details">Summary</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <!-- Sidebar end -->
-        <div class="col-8" id="right-side-content">
+        <div class="col-12 col-md-8" id="right-side-content">
           <!-- Step 1 start -->
-          <div id="step1">
-            <h1>Personal info</h1>
-            <p>Please provide your name, email address, and phone number.</p>
-            <form>
+          <div id="steps" class="row mx-auto">
+            <div id="step1">
+              <h1>Personal info</h1>
+              <p class="step-description">Please provide your name, email address, and phone number.</p>
+              <form>
 
-              <label for="full_name">
-                Name
-                <span id="name-required" class="hidden text-danger">
-                  This field is required
-                </span>
-              </label>
-              <input type="text" name="full_name" id="full-name" placeholder="e.g. Stephen King">
+                <label for="full_name">
+                  Name
+                  <span id="name-required" class="hidden text-danger">
+                    This field is required
+                  </span>
+                </label>
+                <input type="text" name="full_name" id="full-name" placeholder="e.g. Stephen King">
 
-              <label for="email">
-                Email Address
-                <span id="email-required" class="hidden text-danger">
-                  This field is required
-                </span>
-                <span id="email-valid" class="hidden text-danger">
-                  Please enter a valid email address
-                </span>
-              </label>
-              <input type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com">
+                <label for="email">
+                  Email Address
+                  <span id="email-required" class="hidden text-danger">
+                    This field is required
+                  </span>
+                  <span id="email-valid" class="hidden text-danger">
+                    Please enter a valid email address
+                  </span>
+                </label>
+                <input type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com">
 
-              <label for="phone">
-                Phone Number
-                <span id="phone-required" class="hidden text-danger">
-                  This field is required
-                </span>
-                <span id="phone-valid" class="hidden text-danger">
-                  Please enter a valid phone number
-                </span>
-              </label>
-              <input type="tel" name="phone" id="phone" placeholder="e.g. +1 234 567 890">
+                <label for="phone">
+                  Phone Number
+                  <span id="phone-required" class="hidden text-danger">
+                    This field is required
+                  </span>
+                  <span id="phone-valid" class="hidden text-danger">
+                    Please enter a valid phone number
+                  </span>
+                </label>
+                <input type="tel" name="phone" id="phone" placeholder="e.g. +1 234 567 890">
 
 
 
-            </form>
+              </form>
 
-          </div>
-
-          <!-- Step 1 end -->
-
-          <!-- Step 2 start -->
-          <div id="step2">
-
-            <h1>Select your plan</h1>
-            <p>You have the option of monthly or yearly billing.</p>
-            <div class="row justify-content-evenly">
-              <div id="arcade" class="plan-card col-3">
-                <img src="./assets/images/icon-arcade.svg" alt="arcade icon">
-                <div class='plan-name'>Arcade</div>
-                <div class="plan-price">$9/mo</div>
-              </div>
-              <div id="advanced" class="plan-card col-3">
-                <img src="./assets/images/icon-advanced.svg" alt="advanced icon">
-                <div class='plan-name'>Advanced</div>
-                <div class="plan-price">$12/mo</div>
-              </div>
-              <div id="pro" class="plan-card col-3">
-                <img src="./assets/images/icon-pro.svg" alt="pro icon">
-                <div class='plan-name'>Pro</div>
-                <div class="plan-price">$15/mo</div>
-              </div>
-            </div>
-            <div id="toggle-plan-container" class="d-flex justify-content-center my-3 align-items-center">
-              <div id="monthly-plan">Monthly</div>
-              <div id="toggle-month-year">
-                <div id="switch-month-year"> </div>
-              </div>
-              <div id="yearly-plan">Yearly</div>
-            </div>
-            <div id="plan-warning" class="hidden text-danger text-center">
-              Please select a plan
-            </div>
-          </div>
-          <!-- Step 2 end -->
-
-          <!-- Step 3 start -->
-          <div id="step3">
-
-            <h1>Pick add-ons</h1>
-            <p>Add-ons help enhance your gaming experience.</p>
-
-            <div id="online-service" class="addon-option row align-items-center p-2">
-              <div class="col-1 justify-content-center">
-                <input type="checkbox">
-              </div>
-              <div class="col-9 justify-content-center">
-                <span class="addon-name">Online service</span>
-                <p class="addon-details m-0">Access to multiplayer games</p>
-              </div>
-              <div class="addon-price col-2 justify-content-center">+$1/mo</div>
             </div>
 
-            <div id="larger-storage" class="addon-option row align-items-center p-2">
-              <div class="col-1 justify-content-center">
-                <input type="checkbox">
-              </div>
-              <div class="col-9 justify-content-center">
-                <span class="addon-name">Larger storage</span>
-                <p class="addon-details m-0">Extra 1TB of cloud save</p>
-              </div>
-              <div class="addon-price col-2 justify-content-center">+$2/mo</div>
-            </div>
+            <!-- Step 1 end -->
 
-            <div id="customizable-profile" class="addon-option row align-items-center p-2">
-              <div class="col-1 justify-content-center">
-                <input type="checkbox">
-              </div>
-              <div class="col-9 justify-content-center">
-                <span class="addon-name">Customizable Profile</span>
-                <p class="addon-details m-0">Custom theme on your profile</p>
-              </div>
-              <div class="addon-price col-2 justify-content-center">+$2/mo</div>
-            </div>
+            <!-- Step 2 start -->
+            <div id="step2">
 
-          </div>
-          <!-- Step 3 end -->
-
-          <!-- Step 4 start -->
-          <div id="step4">
-
-            <h1>Finishing up</h1>
-            <p>Double-check everything looks OK before confirming.</p>
-
-            <!-- Dynamically add subscription and add-on selections here -->
-            <div id="summary-info">
-              <div id="summary-plan" class="row mx-auto align-items-center py-2">
-                <div class="row mx-auto align-items-center p-1">
-                  <div class="col-9">
-                    <div id="plan-name" class="addon-name"></div>
-                    <div id="change-plan">Change</div>
-                  </div>
-                  <div class="col-3" id="plan-total-price"></div>
+              <h1>Select your plan</h1>
+              <p class="step-description">You have the option of monthly or yearly billing.</p>
+              <div class="row justify-content-evenly">
+                <div id="arcade" class="plan-card col-3">
+                  <img src="./assets/images/icon-arcade.svg" alt="arcade icon">
+                  <div class='plan-name'>Arcade</div>
+                  <div class="plan-price">$9/mo</div>
+                </div>
+                <div id="advanced" class="plan-card col-3">
+                  <img src="./assets/images/icon-advanced.svg" alt="advanced icon">
+                  <div class='plan-name'>Advanced</div>
+                  <div class="plan-price">$12/mo</div>
+                </div>
+                <div id="pro" class="plan-card col-3">
+                  <img src="./assets/images/icon-pro.svg" alt="pro icon">
+                  <div class='plan-name'>Pro</div>
+                  <div class="plan-price">$15/mo</div>
                 </div>
               </div>
-
-              <hr id="hr" class="hidden mx-auto my-0">
-
-              <div id="summary-addons" class="row mx-auto align-items-center py-2"></div>
+              <div id="toggle-plan-container" class="d-flex justify-content-center my-3 align-items-center">
+                <div id="monthly-plan">Monthly</div>
+                <div id="toggle-month-year">
+                  <div id="switch-month-year"> </div>
+                </div>
+                <div id="yearly-plan">Yearly</div>
+              </div>
+              <div id="plan-warning" class="hidden text-danger text-center">
+                Please select a plan
+              </div>
             </div>
-            <div id="summary-total">
-              <div id="total-info" class="row mx-auto align-items-center py-2">
-                <div class="row mx-auto align-items-center p-1">
-                  <div class="col-9">
-                    <div id="total"></div>
+            <!-- Step 2 end -->
+
+            <!-- Step 3 start -->
+            <div id="step3">
+
+              <h1>Pick add-ons</h1>
+              <p class="step-description">Add-ons help enhance your gaming experience.</p>
+
+              <div id="online-service" class="addon-option row align-items-center p-2">
+                <div class="col-1 justify-content-center">
+                  <input type="checkbox">
+                </div>
+                <div class="col-9 justify-content-center">
+                  <span class="addon-name">Online service</span>
+                  <p class="addon-details m-0">Access to multiplayer games</p>
+                </div>
+                <div class="addon-price col-2 justify-content-center">+$1/mo</div>
+              </div>
+
+              <div id="larger-storage" class="addon-option row align-items-center p-2">
+                <div class="col-1 justify-content-center">
+                  <input type="checkbox">
+                </div>
+                <div class="col-9 justify-content-center">
+                  <span class="addon-name">Larger storage</span>
+                  <p class="addon-details m-0">Extra 1TB of cloud save</p>
+                </div>
+                <div class="addon-price col-2 justify-content-center">+$2/mo</div>
+              </div>
+
+              <div id="customizable-profile" class="addon-option row align-items-center p-2">
+                <div class="col-1 justify-content-center">
+                  <input type="checkbox">
+                </div>
+                <div class="col-9 justify-content-center">
+                  <span class="addon-name">Customizable Profile</span>
+                  <p class="addon-details m-0">Custom theme on your profile</p>
+                </div>
+                <div class="addon-price col-2 justify-content-center">+$2/mo</div>
+              </div>
+
+            </div>
+            <!-- Step 3 end -->
+
+            <!-- Step 4 start -->
+            <div id="step4">
+
+              <h1>Finishing up</h1>
+              <p class="step-description">Double-check everything looks OK before confirming.</p>
+
+              <!-- Dynamically add subscription and add-on selections here -->
+              <div id="summary-info" class="row justify-items-center mx-auto">
+                <div id="summary-plan" class="row mx-auto align-items-center py-2">
+                  <div class="row mx-auto align-items-center p-1">
+                    <div class="col-9">
+                      <div id="plan-name" class="addon-name"></div>
+                      <div id="change-plan">Change</div>
+                    </div>
+                    <div class="col-3" id="plan-total-price"></div>
                   </div>
-                  <div class="col-3" id="total-price"></div>
+                </div>
+
+                <hr id="hr" class="hidden mx-auto my-0">
+
+                <div id="summary-addons" class="row mx-auto align-items-center py-2"></div>
+              </div>
+              <div id="summary-total" class="row justify-items-center mx-auto">
+                <div id="total-info" class="row mx-auto align-items-center py-2">
+                  <div class="row mx-auto align-items-center p-1">
+                    <div class="col-9">
+                      <div id="total"></div>
+                    </div>
+                    <div class="col-3" id="total-price"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Step 4 end -->
+            <!-- Step 4 end -->
 
-          <!-- Step 5 start -->
-          <div id="step5" class="h-100">
-            <div id="step5-content" class="h-100 d-flex flex-column align-items-center justify-content-center">
-              <img id="thank-you-image" src="./assets/images/icon-thank-you.svg" alt="thank you icon">
-              <h1 class="text-center">Thank you!</h1>
+            <!-- Step 5 start -->
+            <div id="step5" class="h-100">
+              <div id="step5-content" class="h-100 d-flex flex-column align-items-center justify-content-center">
+                <img id="thank-you-image" src="./assets/images/icon-thank-you.svg" alt="thank you icon">
+                <h1 class="text-center">Thank you!</h1>
 
-              <p class="text-center">Thanks for confirming your subscription! We hope you have fun
-                using our platform. If you ever need support, please feel free
-                to email us at support@loremgaming.com.</p>
+                <p class="text-center step-description">Thanks for confirming your subscription! We hope you have fun
+                  using our platform. If you ever need support, please feel free
+                  to email us at support@loremgaming.com.</p>
+              </div>
             </div>
           </div>
           <!-- Step 5 end -->

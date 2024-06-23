@@ -83,7 +83,8 @@ input {
     color: white;
     border: none;
     border-radius: 8px;
-    padding: 5px 15px;
+    padding: 15px 20px;
+    font-weight: bold;
 }
 
 #go-back-button {
@@ -226,7 +227,7 @@ input[type="checkbox"] {
 }
 
 hr {
-    width: 90%;
+    width: 70%;
 }
 
 #selected-addon-name {
@@ -239,7 +240,10 @@ hr {
     font-weight: normal;
 }
 
-#summary-plan, #summary-addons, #summary-total, #total-info {
+#summary-plan,
+#summary-addons,
+#summary-total,
+#total-info {
     width: 90%;
 }
 
@@ -260,3 +264,82 @@ hr {
     height: 100px;
 }
 
+@media screen and (max-width: 767px) {
+    #step-menu {
+        background-image: url('./assets/images/bg-sidebar-mobile.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        min-width: 100%;
+        color: white;
+        position: absolute;
+        top: 0;
+        padding: 2vh;
+    }
+
+    .menu-step1,
+    .menu-step2,
+    .menu-step3,
+    .menu-step4 {
+        display: none;
+    }
+
+    .step-number {
+        transform: scale(2);
+    }
+
+    #step-container {
+        gap: 30px;
+    }
+
+    body {
+        height: auto;
+    }
+
+    #right-side-content {
+        position: absolute;
+        top: 200px;
+        width: 100vw;
+        padding: 0;
+        height: calc(100vh - 200px) !important;
+    }
+
+    #steps {
+        width: 90vw;
+    }
+
+    #step1,
+    #step2,
+    #step3,
+    #step4,
+    #step5 {
+        background-color: white;
+        border-radius: 10px;
+        padding: 40px 15px;
+    }
+
+    #buttons-menu {
+        position: absolute;
+        bottom: 0;
+        background-color: white;
+        padding: 30px;
+        width: 100vw;
+    }
+
+    label {
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .step-description {
+        font-size: 25px;
+    }
+
+    input {
+        padding: 15px;
+    }
+}
